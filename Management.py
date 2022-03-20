@@ -2,7 +2,7 @@ import downloader
 import jsonParser
 import re
 
-files = ["output/domains.csv", "output/ip.csv", "output/md5.csv","output/sha256.csv","output/sha1.csv"]
+files = ["output/domains.txt", "output/ip.txt", "output/md5.txt","output/sha256.txt","output/sha1.txt"]
 downloader.downloadcyber()
 jsonParser.parser()
 def removparenthesesfromip(sourcefile , dest_file):
@@ -11,14 +11,12 @@ def removparenthesesfromip(sourcefile , dest_file):
         pattern = re.sub(r"[\([{})\]]", "", input)
         with open(dest_file, 'w') as my_file:
          my_file.write(pattern)
-removparenthesesfromip("output/ip_temp.csv","output/ip.csv")
-removparenthesesfromip("output/domains_temp.csv","output/domains.csv")
+removparenthesesfromip("output/ip_temp.csv","output/ip.txt")
+removparenthesesfromip("output/domains_temp.txt","output/domains.txt")
 
 def countLines(filename):
     with open(filename, 'r') as fp:
       for count, line in enumerate(fp):
-
-
         pass
     print('file ' , filename, 'has Total Lines', count + 1)
 for file in files:

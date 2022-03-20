@@ -12,27 +12,28 @@ def parser():
     sha1 = raw[raw['type'].isin(['sha1'])]
     ip = raw[raw['type'].isin(['IP'])]
     domain = raw[raw['type'].isin(['domain'])]
-    with open('output/sha256.csv', 'w') as myfile:
+
+    with open('output/sha256.txt', 'w') as myfile:
         wr = csv.writer(myfile)
         for word in sha256["value"]:
             wr.writerow([word])
 
-    with open('output/md5.csv', 'w', ) as myfile:
+    with open('output/md5.txt', 'w', ) as myfile:
         wr = csv.writer(myfile)
         for word in md5["value"]:
             wr.writerow([word])
 
-    with open('output/sha1.csv', 'w', ) as myfile:
+    with open('output/sha1.txt', 'w', ) as myfile:
         wr = csv.writer(myfile)
         for word in sha1["value"]:
             wr.writerow([word])
 
-    with open('output/ip_temp.csv', 'w', ) as myfile:
+    with open('output/ip_temp.txt', 'w', ) as myfile:
         wr = csv.writer(myfile)
         for word in ip["value"]:
             wr.writerow([word])
 
-    with open('output/domains_temp.csv', 'w', ) as myfile:
+    with open('output/domains_temp.txt', 'w', ) as myfile:
         wr = csv.writer(myfile)
         for word in domain["value"]:
             wr.writerow([word])
